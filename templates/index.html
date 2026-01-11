@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVisual - Audio-Reactive Visualizations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 NeuroVisual</h1>
+            <p class="tagline">Personalized Audio-Reactive Visualizations for Neurodivergent Users</p>
+        </header>
+
+        <main>
+            <!-- Visualization Canvas -->
+            <section class="visualization-section">
+                <canvas id="visualizationCanvas"></canvas>
+                <div class="viz-overlay" id="vizOverlay">
+                    <p>Upload audio or start microphone to begin</p>
+                </div>
+            </section>
+
+            <!-- Controls -->
+            <section class="controls-section">
+                <div class="control-group">
+                    <h3>Audio Input</h3>
+                    <div class="button-group">
+                        <input type="file" id="audioFileInput" accept="audio/*" style="display: none;">
+                        <button id="uploadBtn" class="btn btn-primary">
+                            📁 Upload Audio
+                        </button>
+                        <button id="micBtn" class="btn btn-secondary">
+                            🎤 Use Microphone
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Feedback</h3>
+                    <p class="feedback-description">Help NeuroVisual learn your preferences!</p>
+                    <div class="feedback-buttons">
+                        <button id="feedbackPositive" class="btn btn-feedback btn-positive">
+                            👍 Soothing
+                        </button>
+                        <button id="feedbackNegative" class="btn btn-feedback btn-negative">
+                            👎 Overstimulating
+                        </button>
+                    </div>
+                    <p class="feedback-status" id="feedbackStatus"></p>
+                </div>
+
+                <div class="control-group">
+                    <h3>Settings</h3>
+                    <div class="button-group">
+                        <button id="resetBtn" class="btn btn-warning">
+                            🔄 Reset Learning
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <div class="info-card">
+                    <h4>Current Audio Features</h4>
+                    <div id="audioFeatures" class="features-display">
+                        <p>No audio being processed</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h4>Visualization Parameters</h4>
+                    <div id="vizParams" class="params-display">
+                        <p>No parameters set</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>NeuroVisual uses human-in-the-loop reinforcement learning to create personalized, sensory-safe visualizations.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/visualization.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

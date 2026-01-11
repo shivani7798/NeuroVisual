@@ -1,0 +1,295 @@
+/* NeuroVisual Styles - Designed for comfort and accessibility */
+
+:root {
+    --bg-dark: #1a1a2e;
+    --bg-medium: #25274d;
+    --bg-light: #2e3a59;
+    --accent-calm: #4a90e2;
+    --accent-warm: #7fb3d5;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --success: #5cb85c;
+    --warning: #f0ad4e;
+    --danger: #d9534f;
+    --border-color: #3a3a5a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--accent-calm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Main Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Visualization Section */
+.visualization-section {
+    position: relative;
+    background: var(--bg-light);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-height: 500px;
+}
+
+#visualizationCanvas {
+    width: 100%;
+    height: 500px;
+    display: block;
+    background: linear-gradient(135deg, #1e1e3f 0%, #2a2a4a 100%);
+}
+
+.viz-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 1.5em;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.viz-overlay.hidden {
+    opacity: 0;
+}
+
+/* Controls Section */
+.controls-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.control-group {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.control-group h3 {
+    margin-bottom: 15px;
+    color: var(--accent-calm);
+    font-size: 1.3em;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--accent-calm);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--accent-warm);
+    color: white;
+}
+
+.btn-warning {
+    background: var(--warning);
+    color: white;
+}
+
+.btn-feedback {
+    flex: 1;
+    min-width: 140px;
+    font-size: 1.1em;
+    padding: 15px 20px;
+}
+
+.btn-positive {
+    background: var(--success);
+    color: white;
+}
+
+.btn-negative {
+    background: var(--danger);
+    color: white;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.feedback-description {
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.feedback-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-status.success {
+    background: rgba(92, 184, 92, 0.2);
+    color: var(--success);
+}
+
+.feedback-status.info {
+    background: rgba(74, 144, 226, 0.2);
+    color: var(--accent-calm);
+}
+
+/* Info Section */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h4 {
+    margin-bottom: 15px;
+    color: var(--accent-calm);
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.features-display,
+.params-display {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.features-display p,
+.params-display p {
+    margin: 5px 0;
+}
+
+.feature-label,
+.param-label {
+    color: var(--accent-warm);
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .controls-section,
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .feedback-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-feedback {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+.btn:focus {
+    outline: 3px solid var(--accent-calm);
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for better UX */
+* {
+    transition: background-color 0.2s ease;
+}
