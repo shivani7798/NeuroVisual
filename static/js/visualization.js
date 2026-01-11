@@ -73,10 +73,10 @@ class VisualizationRenderer {
         this.ctx.fillRect(0, 0, width, height);
         
         // Draw calming patterns
-        this.drawCalMingPatterns(centerX, centerY);
+        this.drawCalmingPatterns(centerX, centerY);
     }
     
-    drawCalMingPatterns(centerX, centerY) {
+    drawCalmingPatterns(centerX, centerY) {
         const { width, height } = this.canvas;
         const complexity = Math.floor(this.params.pattern_complexity * 20) + 3;
         const size = this.params.pattern_size * Math.min(width, height) / 3;
