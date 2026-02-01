@@ -1,0 +1,12 @@
+{
+  "sensitivity_multipliers": {
+    "energy_sensitivity": 0.5,
+    "tempo_sensitivity": 0.5,
+    "contrast_sensitivity": 0.5,
+    "flash_tolerance": 0.0,
+    "brightness_preference": 0.7,
+    "saturation_preference": 0.5
+  },
+  "exploration_rate": 0.2,
+  "feedback_count": 0
+}
